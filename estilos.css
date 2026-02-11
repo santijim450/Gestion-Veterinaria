@@ -1,0 +1,326 @@
+body {
+    background-color: #EAEAEA;
+    font-family: Arial, sans-serif;
+    color: #333333;
+    margin: 0;
+    padding: 0;
+}
+
+/* 1. ESTRUCTURA GLOBAL Y ENCABEZADO */
+header {
+    background-color: #2D6A9F;
+    padding: 20px;
+    color: #FFFFFF;
+}
+.logo {
+    display: flex;
+    align-items: center;
+}
+img.logo-img {
+    width: 150px;
+    height: 150px;
+    margin-right: 15px;
+}
+.contenedor-principal {
+    display: flex;
+    min-height: calc(100vh - 200px); 
+}
+
+/* 2. MENÚ LATERAL */
+.menu-lateral {
+    background-color: #2D6A9F;
+    width: 220px;
+    padding-top: 30px;
+    flex-shrink: 0; 
+}
+.menu-lateral ul {
+    list-style: none;
+    padding-left: 20px;
+}
+.menu-lateral li {
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    margin-bottom: 28px;
+    font-size: 18px;
+    cursor: pointer;
+}
+.menu-lateral i {
+    font-size: 22px;
+    margin-right: 10px;
+}
+.menu-lateral a,
+.menu-lateral a:link,
+.menu-lateral a:visited,
+.menu-lateral a:active {
+    text-decoration: none !important;
+    color: inherit; 
+}
+
+/* 3. CONTENIDO PRINCIPAL (MAIN) */
+main {
+    padding: 30px;
+    background-color: #FFFFFF;
+    flex: 1; 
+    overflow-x: hidden; 
+}
+h2 {
+    color: #2D6A9F;
+}
+
+/* 4. TABLAS Y COMPONENTES DE TABLA */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #EAEAEA;
+    min-width: 700px; 
+}
+th, td {
+    padding: 10px;
+    border: 1px solid #FFFFFF;
+    text-align: left;
+    vertical-align: middle;
+}
+th {
+    background-color: #2D6A9F;
+    color: #FFFFFF;
+}
+
+/* Contenedor para scroll horizontal en tablas */
+.table-responsive {
+    overflow-x: auto; 
+    margin-top: 15px;
+    padding-bottom: 10px;
+}
+
+/* 5. BOTONES DE ACCIÓN */
+.edit-btn {
+    background-color: #ff8c42;
+    color: #FFFFFF;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 5px;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+}
+.delete-btn {
+    background-color: #333333;
+    color: #FFFFFF;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+}
+.Agregar {
+    background-color: #2D6A9F;
+    color: #FFFFFF;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+.edit-btn:hover, .delete-btn:hover, .Agregar:hover {
+    opacity: 0.85;
+}
+
+/* 6. PIE DE PÁGINA */
+.PiePagina table {
+    width: 100%;
+    margin-top: 5px;
+    background-color: #2D6A9F;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 2%;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2vw;
+    height: 180px;
+    min-width: unset;
+    border-collapse: separate;
+    
+}
+.PiePagina td {
+    border: none;
+    padding: 10px;
+    vertical-align: top;
+}
+
+/* REGLAS CORREGIDAS PARA CENTRADO Y ENLACES DEL FOOTER */
+
+/* A. Centrar el contenido del bloque de contacto (primera columna) */
+.PiePagina td:first-child {
+    text-align: center; 
+}
+
+/* B. Layout Horizontal para Redes Sociales (segunda columna) */
+.PiePagina td:last-child {
+    display: flex; 
+    flex-direction: row; /* Horizontal */
+    justify-content: center; /* Centrado horizontal */
+    align-items: center; /* Centrado vertical */
+    gap: 30px; /* Espacio entre los iconos */
+    /* Aseguramos que el contenedor sea el que centre los elementos */
+}
+
+/* C. Forzar color BLANCO y eliminar el subrayado de todos los enlaces */
+.PiePagina td a,
+.PiePagina td a:link,
+.PiePagina td a:visited,
+.PiePagina td a:active {
+    color: #FFFFFF !important; 
+    text-decoration: none !important;
+    display: flex !important; /* Mantenemos flex para alinear icono/texto verticalmente */
+    flex-direction: column;
+    align-items: center; /* Centra el icono y el texto dentro de su propio bloque */
+}
+
+/* D. Asegurar que los íconos también tengan el color BLANCO */
+.PiePagina td a i {
+    color: #FFFFFF !important;
+    margin-bottom: 5px; /* Espacio entre el icono y el texto */
+}
+
+/* E. Estilo al pasar el ratón (Hover) */
+.PiePagina td a:hover {
+    color: #FFFFFF !important; 
+    text-decoration: underline !important;
+}
+
+/* AJUSTES DE IMAGEN EN TABLA */
+table tr td img {
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+
+/* ================================================= */
+/* === ESTILOS RESPONSIVOS (Media Queries) === */
+/* ================================================= */
+
+@media (max-width: 900px) {
+    /* Ajuste de tipografía en el pie de página */
+    .PiePagina table {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* 1. LAYOUT PRINCIPAL Y BARRA LATERAL */
+    .contenedor-principal {
+        display: block; 
+    }
+    
+    /* Configuración de la barra lateral para móvil: se colapsa en horizontal */
+    .menu-lateral {
+        width: 100%; 
+        min-height: unset; 
+        padding: 10px 0;
+        background-color: #2D6A9F; 
+    }
+
+    .menu-lateral ul {
+        display: flex; 
+        flex-wrap: wrap; 
+        justify-content: center; 
+        padding: 0 10px;
+    }
+
+    .menu-lateral li {
+        margin: 5px 10px; 
+        font-size: 14px;
+        display: inline-flex; 
+    }
+    .menu-lateral i {
+        display: none; 
+    }
+
+    /* 2. CONTENIDO PRINCIPAL Y SCROLL DE TABLA */
+    main {
+        padding: 15px; 
+        width: 100%;
+        box-sizing: border-box; 
+    }
+    
+    .table-responsive {
+        width: 100%; 
+    }
+    
+    main table {
+        min-width: 700px; 
+    }
+    
+    /* 3. ENCABEZADO Y LOGO */
+    header {
+        padding: 10px;
+    }
+    img.logo-img {
+        width: 60px; 
+        height: 60px;
+    }
+    .logo h1 {
+        font-size: 1.2em; 
+    }
+
+    /* 4. ACCIONES (AGREGAR/BUSCAR) */
+    div[style*="display:flex"] {
+        flex-direction: column; 
+        align-items: stretch !important; 
+        gap: 10px;
+    }
+    div[style*="display:flex"] form {
+        width: 100%;
+        display: flex;
+    }
+    div[style*="display:flex"] form input[type="text"] {
+        flex: 1; 
+    }
+    .Agregar, .edit-btn, .delete-btn {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 5px;
+        box-sizing: border-box;
+    }
+    
+    /* 5. PIE DE PÁGINA (Aseguramos que el layout de redes sociales sea vertical si es necesario en móvil) */
+    .PiePagina table {
+        height: auto; 
+        font-size: 12px;
+    }
+    .PiePagina table, .PiePagina tbody, .PiePagina tr, .PiePagina td {
+        display: block; 
+        width: 100%;
+        text-align: center;
+    }
+    /* En móvil, volvemos a la disposición vertical para redes sociales si es necesario */
+    .PiePagina td:last-child {
+        display: block; /* Desactivar flex para la segunda celda */
+        text-align: center;
+    }
+    .PiePagina td a {
+        display: block !important;
+        margin: 5px 0;
+    }
+}
+
+/* Ajustes para pantallas aún más pequeñas */
+@media (max-width: 480px) {
+    .menu-lateral li {
+        margin: 5px 5px; 
+        font-size: 12px;
+    }
+    img.logo-img {
+        width: 40px; 
+        height: 40px;
+    }
+    .logo h1 {
+        font-size: 1.2em; 
+    }
+}
